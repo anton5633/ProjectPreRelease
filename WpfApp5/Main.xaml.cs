@@ -91,7 +91,13 @@ namespace WpfApp5
 
         private void ToProduct(object sender, RoutedEventArgs e)
         {
-            //ClassChangePage.frame1.Navigate(new Product());
+            // Получаем товар, который соответствует нажатой кнопке
+            var product = (sender as Button).CommandParameter as ProductCards;
+            var reviews = (sender as Button).CommandParameter as Reviews;
+            ClassChangePage.frame1.Navigate(new ProductCard(product, reviews));
+            // Открываем новую страницу с подробной информацией о товаре
+            // Например, можно использовать NavigationService для перехода на новую страницу
+            // или открыть модальное окно с подробной информацией
         }
     }
 }

@@ -60,7 +60,7 @@ namespace WpfApp5
             }
             else
             {
-                return "Администратор";
+                return "Редактор";
             }
         }
 
@@ -77,7 +77,7 @@ namespace WpfApp5
             }
             else
             {
-                return "Администратор";
+                return "Пользователь";
             }
         }
     }
