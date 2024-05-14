@@ -1,0 +1,180 @@
+﻿<Page x:Class="WpfApp5.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5"
+      mc:Ignorable="d" 
+      d:DesignHeight="820" 
+      d:DesignWidth="1920"
+      Loaded="AdminPage_Loaded"
+      Title="AdminPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="770"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Name="Panel" 
+              Background="Black">
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Left">
+                <StackPanel Width="350" 
+                            Height="50">
+                    <ToggleButton x:Name="menuButton" 
+                                  Background="Transparent" 
+                                  BorderBrush="White" 
+                                  BorderThickness="0,0,1,0" 
+                                  Width="350" 
+                                  Height="50">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="350px" 
+                                    Background="Transparent">
+                            <Image Margin="20,0,0,0"  
+                                   Name="UserPanel" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left" 
+                                   Height="50px" 
+                                   Width="50px">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" 
+                                                Value="Img/Кнопка меню неактивная.png"/>
+                                    </Style>
+                                </Image.Style>
+                                <Image.Effect>
+                                    <BlurEffect Radius="1"/>
+                                </Image.Effect>
+                            </Image>
+                            <TextBlock Height="30px" 
+                                       Width="80px" 
+                                       VerticalAlignment="Center" 
+                                       Margin="76,1,0,0" 
+                                       Text="Меню" 
+                                       Foreground="White" 
+                                       FontSize="20" 
+                                       Panel.ZIndex="1" 
+                                       FontFamily="Yu Gothic UI Semibold">
+                            </TextBlock>
+                        </StackPanel>
+                    </ToggleButton>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" 
+                        Orientation="Horizontal">
+                <Button x:Name="LeaveButton" 
+                        Height="50px" 
+                        Width="300px" 
+                        Click="LeaveButton_Click" 
+                        Content="Вернуться к главной странице"
+                        Background="Transparent" 
+                        Foreground="White" 
+                        FontFamily="Yu Gothic UI Semibold"
+                        FontSize="18"
+                        BorderBrush="White" 
+                        BorderThickness="1,0,0,0" 
+                        Margin="0.1,0,0,0">
+                </Button>
+                <Button x:Name="ExitButton" 
+                        Height="50px" 
+                        Width="300px" 
+                        Click="ExitButton_Click" 
+                        Content="Выход из учётной записи"
+                        Background="Transparent" 
+                        Foreground="White" 
+                        FontFamily="Yu Gothic UI Semibold"
+                        FontSize="18"
+                        BorderBrush="White" 
+                        BorderThickness="1,0,0,0" 
+                        Margin="0.1,0,0,0">
+                </Button>
+                
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1"
+              Name="grid">
+            <Popup PlacementTarget="{Binding ElementName=menuButton}" 
+                       IsOpen="{Binding ElementName=menuButton, Path=IsChecked}"
+                       Width="350px" 
+                       Height="60px">
+                <Button Width="350px"
+                                Height="60px"  
+                                Background="Black"
+                                Click="Button_Click"
+                                Foreground="CadetBlue"
+                                FontFamily="Yu Gothic UI Semibold"
+                                FontSize="18">
+                    <TextBlock TextAlignment="Center"> Зарегистрировать
+                                            <LineBreak/> Нового оператора
+                    </TextBlock>
+                </Button>
+            </Popup>
+            <Border x:Name="myBorder"
+                    Width="1400" 
+                    Height="600"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" 
+                    Margin="50,50,0,0"
+                    BorderThickness="6px"
+                    CornerRadius="30"
+                    Background="#8C4E4E4E">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" 
+                                         StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.102"/>
+                        <GradientStop Color="Black" 
+                                      Offset="1"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.895"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Grid>
+                    <TextBlock Text="Заглушка"
+                               x:Name="Hello"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Margin="50,30,30,30"
+                               Foreground="Black"
+                               FontSize="34" 
+                               FontFamily="Yu Gothic UI Semibold">
+                    </TextBlock>
+                    <Button Width="500"
+                            Height="100"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="40"
+                            Content="Зарегистрировать новый магазин" 
+                            FontSize="22" 
+                            FontFamily="Yu Gothic UI Semibold" 
+                            Click="ButtonMagaz">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" 
+                                Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Width="500"
+                            Height="100"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            Margin="40"
+                            Content="Зарегистрировать нового редактора" 
+                            FontSize="22" 
+                            FontFamily="Yu Gothic UI Semibold" 
+                            Click="ButtonEditor">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" 
+                                Value="20"/>
+                            </Style>
+                        </Button.Resources> 
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

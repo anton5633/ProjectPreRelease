@@ -1,0 +1,111 @@
+﻿<Page x:Class="WpfApp5.EditorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5"
+      mc:Ignorable="d" 
+      d:DesignHeight="820" 
+      d:DesignWidth="1920"
+      Title="EditorPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="770"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Name="Panel" 
+              Background="Black">
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Left">
+                <StackPanel Width="350" 
+                            Height="50">
+                    <ToggleButton x:Name="menuButton" 
+                                  Background="Transparent" 
+                                  BorderBrush="White" 
+                                  BorderThickness="0,0,1,0" 
+                                  Width="350" 
+                                  Height="50">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="350px" 
+                                    Background="Transparent">
+                            <Image Margin="20,0,0,0"  
+                                   Name="UserPanel" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left" 
+                                   Height="50px" 
+                                   Width="50px">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" 
+                                                Value="Img/Кнопка меню неактивная.png"/>
+                                    </Style>
+                                </Image.Style>
+                                <Image.Effect>
+                                    <BlurEffect Radius="1"/>
+                                </Image.Effect>
+                            </Image>
+                            <TextBlock Height="30px" 
+                                       Width="80px" 
+                                       VerticalAlignment="Center" 
+                                       Margin="76,1,0,0" 
+                                       Text="Меню" 
+                                       Foreground="White" 
+                                       FontSize="20" 
+                                       Panel.ZIndex="1" 
+                                       FontFamily="Yu Gothic UI Semibold">
+                            </TextBlock>
+                        </StackPanel>
+                    </ToggleButton>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" 
+                        Orientation="Horizontal">
+                <Button x:Name="ExitButton" 
+                        Height="50px" 
+                        Width="300px" 
+                        Click="ExitButton_Click" 
+                        Content="Выход из учётной записи"
+                        Background="Transparent" 
+                        Foreground="White" 
+                        FontFamily="Yu Gothic UI Semibold"
+                        FontSize="18"
+                        BorderBrush="White" 
+                        BorderThickness="1,0,0,0" 
+                        Margin="0.1,0,0,0">
+                    
+                </Button>
+                <Button x:Name="LeaveButton" 
+                        Height="50px" 
+                        Width="300px" 
+                        Click="LeaveButton_Click" 
+                        Content="Вернуться к главной странице"
+                        Background="Transparent" 
+                        Foreground="White" 
+                        FontFamily="Yu Gothic UI Semibold"
+                        FontSize="18"
+                        BorderBrush="White" 
+                        BorderThickness="1,0,0,0" 
+                        Margin="0.1,0,0,0">
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1"
+              Name="grid">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50">
+                <Image x:Name="profileImage" MinWidth="300" MinHeight="300" MaxWidth="400" MaxHeight="400"
+                   Source="Img/changetheme.png"/>
+                <Button Content="Change Photo" Click="ChangePhoto_Click" Margin="0,20,0,0" Width="200" Height="20"/>
+
+                <TextBlock x:Name="firstNameTextBlock" FontSize="20" Margin="0,10,0,0" Text="zagl"/>
+                <TextBox x:Name="firstNameTextBox" FontSize="20" Margin="0,10,0,0" />
+                <TextBlock x:Name="secondNameTextBlock" FontSize="20" Margin="0,10,0,0" Text="zagl"/>
+                <TextBox x:Name="secondNameTextBox" FontSize="20" Margin="0,10,0,0" />
+
+                <Button Click="ChangeName" Content="Сохранение изменений" Margin="0,20,0,0" Height="30">
+
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

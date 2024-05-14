@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eff5b4b83654426fbdb768dff518accc" Name="Diagram1">
+        <EntityTypeShape EntityType="SportModel.Admins" Width="1.5" PointX="5.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.Clients" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.Editors" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.OrderDetails" Width="1.5" PointX="3.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.ProductCards" Width="1.5" PointX="0.625" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.Reviews" Width="1.5" PointX="2.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.Stores" Width="1.5" PointX="0.625" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportModel.Users" Width="1.5" PointX="5.625" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="SportModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="SportModel.FK_Review_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="SportModel.FK_ProductStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SportModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="SportModel.FK_Product_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="SportModel.FK_Review_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
