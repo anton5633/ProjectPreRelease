@@ -25,8 +25,8 @@ namespace WpfApp5
     /// </summary>
     public partial class TEST : Page
     {
-        private Admins _currentAdmins;
-        private SportEntities sportEntities;
+        private readonly Admins _currentAdmins;
+        private readonly SportEntities sportEntities;
 
         public TEST()
         {
@@ -64,8 +64,10 @@ namespace WpfApp5
 
         private void ChangePhoto_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
+            };
 
             if (openFileDialog.ShowDialog() == true)
             {

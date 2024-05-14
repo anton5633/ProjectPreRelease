@@ -18,49 +18,6 @@
         <Grid Grid.Row="0"
               Name="Panel" 
               Background="Black">
-            <StackPanel Orientation="Horizontal" 
-                        HorizontalAlignment="Left">
-                <StackPanel Width="350" 
-                            Height="50">
-                    <ToggleButton x:Name="menuButton" 
-                                  Background="Transparent" 
-                                  BorderBrush="White" 
-                                  BorderThickness="0,0,1,0" 
-                                  Width="350" 
-                                  Height="50">
-                        <StackPanel Orientation="Horizontal"
-                                    Width="350px" 
-                                    Background="Transparent">
-                            <Image Margin="20,0,0,0"  
-                                   Name="UserPanel" 
-                                   VerticalAlignment="Center" 
-                                   HorizontalAlignment="Left" 
-                                   Height="50px" 
-                                   Width="50px">
-                                <Image.Style>
-                                    <Style TargetType="{x:Type Image}">
-                                        <Setter Property="Source" 
-                                                Value="Img/Кнопка меню неактивная.png"/>
-                                    </Style>
-                                </Image.Style>
-                                <Image.Effect>
-                                    <BlurEffect Radius="1"/>
-                                </Image.Effect>
-                            </Image>
-                            <TextBlock Height="30px" 
-                                       Width="80px" 
-                                       VerticalAlignment="Center" 
-                                       Margin="76,1,0,0" 
-                                       Text="Меню" 
-                                       Foreground="White" 
-                                       FontSize="20" 
-                                       Panel.ZIndex="1" 
-                                       FontFamily="Yu Gothic UI Semibold">
-                            </TextBlock>
-                        </StackPanel>
-                    </ToggleButton>
-                </StackPanel>
-            </StackPanel>
             <StackPanel HorizontalAlignment="Right" 
                         Orientation="Horizontal">
                 <Button x:Name="LeaveButton" 
@@ -89,33 +46,17 @@
                         BorderThickness="1,0,0,0" 
                         Margin="0.1,0,0,0">
                 </Button>
-                
+
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1"
               Name="grid">
-            <Popup PlacementTarget="{Binding ElementName=menuButton}" 
-                       IsOpen="{Binding ElementName=menuButton, Path=IsChecked}"
-                       Width="350px" 
-                       Height="60px">
-                <Button Width="350px"
-                                Height="60px"  
-                                Background="Black"
-                                Click="Button_Click"
-                                Foreground="CadetBlue"
-                                FontFamily="Yu Gothic UI Semibold"
-                                FontSize="18">
-                    <TextBlock TextAlignment="Center"> Зарегистрировать
-                                            <LineBreak/> Нового оператора
-                    </TextBlock>
-                </Button>
-            </Popup>
             <Border x:Name="myBorder"
-                    Width="1400" 
-                    Height="600"
+                    Width="1392" 
+                    Height="636"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center" 
-                    Margin="50,50,0,0"
+                    Margin="50,0,0,0"
                     BorderThickness="6px"
                     CornerRadius="30"
                     Background="#8C4E4E4E">
@@ -141,11 +82,11 @@
                                FontSize="34" 
                                FontFamily="Yu Gothic UI Semibold">
                     </TextBlock>
-                    <Button Width="500"
-                            Height="100"
+                    <Button Width="430"
+                            Height="50"
                             VerticalAlignment="Bottom"
                             HorizontalAlignment="Left"
-                            Margin="40"
+                            Margin="30"
                             Content="Зарегистрировать новый магазин" 
                             FontSize="22" 
                             FontFamily="Yu Gothic UI Semibold" 
@@ -157,11 +98,28 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button Width="500"
-                            Height="100"
+                    <Button Width="430"
+                            Height="50"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Center"
+                            Margin="30"
+                            Content="Зарегистрировать нового пользователя" 
+                            FontSize="22" 
+                            FontFamily="Yu Gothic UI Semibold" 
+                            Click="Button_Click"
+                            >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" 
+                                Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Width="430"
+                            Height="50"
                             VerticalAlignment="Bottom"
                             HorizontalAlignment="Right"
-                            Margin="40"
+                            Margin="30"
                             Content="Зарегистрировать нового редактора" 
                             FontSize="22" 
                             FontFamily="Yu Gothic UI Semibold" 
@@ -171,8 +129,84 @@
                                 <Setter Property="CornerRadius" 
                                 Value="20"/>
                             </Style>
-                        </Button.Resources> 
+                        </Button.Resources>
                     </Button>
+                </Grid>
+            </Border>
+            <Border x:Name="myBorder1"
+                    Width="446" 
+                    Height="636"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" 
+                    Margin="1464,0,0,0"
+                    BorderThickness="6px"
+                    CornerRadius="30"
+                    Background="#8C4E4E4E">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" 
+                                         StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.102"/>
+                        <GradientStop Color="Black" 
+                                      Offset="1"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.895"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Grid>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0">
+                        <Image x:Name="profileImage" MinWidth="100" MinHeight="100" MaxWidth="300" MaxHeight="300"
+                   Source="Img/changetheme.png"/>
+                        <Button Content="Change Photo" Click="ChangePhoto_Click" Margin="0,20,0,0" Width="200" Height="20">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+
+                        <TextBlock x:Name="firstNameTextBlock" FontSize="20" Margin="10,10,0,0" Text="zagl"/>
+                        <TextBox x:Name="firstNameTextBox" FontSize="20" Margin="0,10,0,0">
+                            <TextBox.Effect>
+                                <DropShadowEffect/>
+                            </TextBox.Effect>
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock x:Name="secondNameTextBlock" FontSize="20" Margin="10,10,0,0" Text="zagl"/>
+                        <TextBox x:Name="secondNameTextBox" FontSize="20" Margin="0,10,0,0">
+                            <TextBox.Effect>
+                                <DropShadowEffect/>
+                            </TextBox.Effect>
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <Button Click="ChangeName" Content="Сохранение изменений" Margin="0,20,0,0" Height="30">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
         </Grid>

@@ -107,20 +107,81 @@
                     </TextBlock>
                 </Button>
             </Popup>
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50">
-                <Image x:Name="profileImage" MinWidth="300" MinHeight="300" MaxWidth="400" MaxHeight="400"
+            <Border x:Name="myBorder1"
+                    Width="473" 
+                    Height="649"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    BorderThickness="6px"
+                    CornerRadius="30"
+                    Background="#8C4E4E4E">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" 
+                                         StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.102"/>
+                        <GradientStop Color="Black" 
+                                      Offset="1"/>
+                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.895"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Grid>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0">
+                        <Image x:Name="profileImage" MinWidth="100" MinHeight="100" MaxWidth="300" MaxHeight="300"
                    Source="Img/changetheme.png"/>
-                <Button Content="Change Photo" Click="ChangePhoto_Click" Margin="0,20,0,0" Width="200" Height="20"/>
+                        <Button Content="Change Photo" Click="ChangePhoto_Click" Margin="0,20,0,0" Width="200" Height="20">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
 
-                <TextBlock x:Name="firstNameTextBlock" FontSize="20" Margin="0,10,0,0" Text="zagl"/>
-                <TextBox x:Name="firstNameTextBox" FontSize="20" Margin="0,10,0,0" />
-                <TextBlock x:Name="secondNameTextBlock" FontSize="20" Margin="0,10,0,0" Text="zagl"/>
-                <TextBox x:Name="secondNameTextBox" FontSize="20" Margin="0,10,0,0" />
-                
-                <Button Click="ChangeName" Content="Сохранение изменений" Margin="0,20,0,0" Height="30">
-                    
-                </Button>
-            </StackPanel>
+                        <TextBlock x:Name="firstNameTextBlock" FontSize="20" Margin="10,10,0,0" Text="zagl"/>
+                        <TextBox x:Name="firstNameTextBox" FontSize="20" Margin="0,10,0,0">
+                            <TextBox.Effect>
+                                <DropShadowEffect/>
+                            </TextBox.Effect>
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock x:Name="secondNameTextBlock" FontSize="20" Margin="10,10,0,0" Text="zagl"/>
+                        <TextBox x:Name="secondNameTextBox" FontSize="20" Margin="0,10,0,0">
+                            <TextBox.Effect>
+                                <DropShadowEffect/>
+                            </TextBox.Effect>
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <Button Click="ChangeName" Content="Сохранение изменений" Margin="0,20,0,0" Height="30">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>

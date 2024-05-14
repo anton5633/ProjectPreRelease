@@ -22,8 +22,8 @@ namespace WpfApp5
     /// </summary>
     public partial class EditorPage : Page
     {
-        private Editors _currentEditor;
-        private SportEntities sportEntities;
+        private readonly Editors _currentEditor;
+        private readonly SportEntities sportEntities;
 
         public EditorPage()
         {
@@ -59,8 +59,10 @@ namespace WpfApp5
 
         private void ChangePhoto_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
+            };
 
             if (openFileDialog.ShowDialog() == true)
             {
