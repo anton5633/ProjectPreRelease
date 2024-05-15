@@ -79,7 +79,7 @@ namespace WpfApp5
                                 }
                             }
 
-                            for (int i = 0; i < box_password.Password.Length; i++)
+                            for (int i = 0; i < box_storeid.Text.Length; i++)
                             {
                                 if (box_storeid.Text[i] >= 'А' && box_storeid.Text[i] <= 'Я')
                                 {
@@ -97,12 +97,12 @@ namespace WpfApp5
                                 MessageBox.Show("Добавьте хотя бы одну цифру");
                             }
 
-                            else if(!number1)
+                            else if(number1)
                             {
                                 MessageBox.Show("Введите число в поле ID магазина");
                             }
 
-                            if (en && number)
+                            if (en && number && !number1)
                             {
 
                                 string login = box_login.Text;
@@ -118,7 +118,7 @@ namespace WpfApp5
 
                                     if (isUserExists)
                                     {
-                                        MessageBox.Show("Такой пользователь уже существует");
+                                        MessageBox.Show("Такой редактор уже существует");
                                     }
                                     else
                                     {

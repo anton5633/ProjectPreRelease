@@ -259,16 +259,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="ProfilePhoto\2024-02-15_12-15-43.png" />
-    <Resource Include="ProfilePhoto\2024-02-15_23-17-10.png" />
-    <Resource Include="ProfilePhoto\2024-03-22_22-55-21.png" />
-    <Resource Include="ProfilePhoto\2024-03-27_18-29-59.png" />
-    <Resource Include="ProfilePhoto\2024-03-27_18-30-36.png" />
-    <Resource Include="ProfilePhoto\2024-04-07_16-12-15.png" />
-    <Resource Include="ProfilePhoto\2024-04-16_21-20-00.png" />
-    <Resource Include="ProfilePhoto\2024-05-02_21-00-00.png" />
-    <Resource Include="ProfilePhoto\2024-05-02_21-01-04.png" />
-    <Resource Include="ProfilePhoto\2024-05-11_09-02-31.png" />
     <Resource Include="ProfilePhoto\changetheme.png" />
     <Resource Include="ProfilePhoto\logo.png" />
     <Resource Include="ProfilePhoto\NYCS-SSI-nightsonly.svg.png" />

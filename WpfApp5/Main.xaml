@@ -47,7 +47,7 @@
         <Grid Grid.Row="1" 
               Name="MainPage"
               Height="770px">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <ItemsControl Name="itemsControl" 
                           HorizontalAlignment="Center" 
                           VerticalAlignment="Center" 
@@ -59,24 +59,51 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border BorderBrush="Black" 
-                                BorderThickness="2" 
-                                Margin="5" 
-                                CornerRadius="10"
-                                    Background="White">
-                                <StackPanel MinWidth="250" MinHeight="300" MaxHeight="300" MaxWidth="200">
-                                    <Image Source="{Binding ProductImage}" 
-                                       Width="100" Height="100" Margin="0,10,0,0" MaxWidth="230"/>
+                            <Border x:Name="myBorder1"
+                                    MinWidth="250" 
+                                    MinHeight="300"
+                                    MaxHeight="300"
+                                    MaxWidth="250"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    BorderThickness="6px"
+                                    CornerRadius="30"
+                                    Background="#8C4E4E4E" Margin="20">
+                                <StackPanel MinWidth="200" MinHeight="300" MaxHeight="300" MaxWidth="200">
+                                    <Image Source="{Binding ProductImagePath}" 
+                                       Width="100" Height="100" Margin="0,10,0,0" />
                                     <TextBlock Text="{Binding ProductName}" 
                                            TextAlignment="Center" Margin="0,10,0,0" MaxWidth="230" TextWrapping="Wrap"/>
                                     <TextBlock Text="{Binding Discription}" 
                                            TextAlignment="Center" Margin="0,10,0,0" MaxWidth="230" TextWrapping="Wrap"/>
                                     <TextBlock Text="{Binding Price}" 
-                                           TextAlignment="Right" VerticalAlignment="Bottom"  Margin="0,60,20,0"/>
+                                               TextAlignment="Right" VerticalAlignment="Bottom"  Margin="0,10,20,0"/>
                                     <Button Click="ToProduct" Content="Перейти к товару"  VerticalAlignment="Bottom"
-                                            CommandParameter="{Binding}">
-                                    </Button>
-                                </StackPanel>
+                                            CommandParameter="{Binding}" Margin="0,10,0,0">
+                                            <Button.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" 
+                                                        Value="10"/>
+                                                </Style>
+                                            </Button.Resources>
+                                            <Button.Effect>
+                                                <DropShadowEffect/>
+                                            </Button.Effect>
+                                        </Button>
+                                    </StackPanel>
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" 
+                                         StartPoint="0.5,0">
+                                        <GradientStop Color="Black"/>
+                                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.102"/>
+                                        <GradientStop Color="Black" 
+                                      Offset="1"/>
+                                        <GradientStop Color="#FF22009E" 
+                                      Offset="0.895"/>
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <!-- Разметка для отображения информации о продукте и его отзывах -->
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

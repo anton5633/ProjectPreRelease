@@ -118,6 +118,7 @@ namespace WpfApp5
                                             DataBase.Users.Add(user);
                                             DataBase.SaveChanges();
                                             MessageBox.Show("Пользователь зарегистрирован");
+                                            GlobalVar.AdminReg = false;
                                             ClassChangePage.frame1.Navigate(new Login());   
                                         }
                                     }

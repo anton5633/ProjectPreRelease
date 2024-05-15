@@ -91,13 +91,20 @@ namespace WpfApp5
 
         private void ToProduct(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
+            // Получаем DataContext, который представляет элемент, на который кликнули
+
+            // Проверка на null для безопасности
+            if ((sender as FrameworkElement)?.DataContext is ProductCards product)
             {
-                if (button.DataContext is ProductCards product)
+                // Создаем экземпляр DiscriptionProduct
+                DiscriptionProduct discriptionProductPage = new DiscriptionProduct(product.ProductID)
                 {
-                    var productDetailsPage = new DiscriptionProduct(product);
-                    NavigationService.Navigate(productDetailsPage);
-                }
+                    // Задаем DataContext страницы, чтобы она могла подгрузить данные о товаре
+                    DataContext = product
+                };
+
+                // Переходим на созданную страницу
+                NavigationService.Navigate(discriptionProductPage);
             }
         }
     }    
