@@ -8,8 +8,38 @@
       d:DesignHeight="820" 
       d:DesignWidth="1920"
       Title="EditorReg">
-
+    <Page.Resources>
+        <ControlTemplate x:Key="box_Password" 
+                         TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+                    x:Name="Bd" 
+                    BorderBrush="Black"
+                    BorderThickness="2px" 
+                    CornerRadius="10">
+                <ScrollViewer Name="PART_ContentHost" 
+                              SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"/>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
     <Grid>
+        <Button Width="200" Height="50" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top"
+                Margin="0,20,20,0"
+                x:Name="AlterBack"
+                Click="AlterBack_Click"
+                BorderBrush="Black"
+                BorderThickness="3"
+                Content="Вернуться"
+                FontSize="18"
+                >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" 
+                            Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Name="label1" 
                Content="Придумайте логин:" 
@@ -44,8 +74,9 @@
                Margin="10,0,0,0" 
                VerticalAlignment="Center" 
                HorizontalAlignment="Left"/>
-            <TextBox x:Name="box_password" 
-                 BorderBrush="Black"
+            <PasswordBox x:Name="box_password"
+                         Template="{StaticResource box_Password}"
+                         BorderBrush="Black"
                  Width="300" 
                  Height="40"
                  Margin="0,0,0,0"
@@ -56,16 +87,16 @@
                  HorizontalContentAlignment="Left" 
                  VerticalContentAlignment="Center" 
                  Padding="10,0,0,0">
-                <TextBox.Effect>
+                <PasswordBox.Effect>
                     <DropShadowEffect/>
-                </TextBox.Effect>
-                <TextBox.Resources>
+                </PasswordBox.Effect>
+                <PasswordBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" 
                             Value="10"/>
                     </Style>
-                </TextBox.Resources>
-            </TextBox>
+                </PasswordBox.Resources>
+            </PasswordBox>
             <Label Name="label3" 
                Content="Ваше имя:" 
                Margin="10,0,0,0" 
@@ -150,7 +181,8 @@
                 </TextBox.Resources>
             </TextBox>
             <Button HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                    Margin="0,20" Height="20" Width="200" Content="Создать редактора">
+                    Margin="0,20" Height="20" Width="200" Content="Создать редактора"
+                    Click="Button_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" 

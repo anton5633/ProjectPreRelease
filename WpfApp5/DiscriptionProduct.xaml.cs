@@ -28,5 +28,10 @@ namespace WpfApp5
             _productCards = productCards;
             DataContext = _productCards;
         }
+
+        private void AlterBack_Click(object sender, RoutedEventArgs e)
+        {
+            ClassChangePage.frame1.Navigate(new Main());
+        }
     }
 }

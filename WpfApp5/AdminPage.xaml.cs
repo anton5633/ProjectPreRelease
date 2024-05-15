@@ -183,12 +183,12 @@ namespace WpfApp5
 
         private void ButtonEditor(object sender, RoutedEventArgs e)
         {
-        
+            ClassChangePage.frame1.Navigate(new EditorReg());
         }
 
         private void ButtonMagaz(object sender, RoutedEventArgs e)
         {
-        
+            ClassChangePage.frame1.Navigate(new MagazReg());
         }
 
         private void LeaveButton_Click(object sender, RoutedEventArgs e)
